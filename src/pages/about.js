@@ -2,6 +2,6 @@ import React from "react"
 
 export default () =>
   <div>
-    <h2>Index</h2>
-    <p>index page</p>
+    <h2>About</h2>
+    <p>I'm a software engineer.</p>
   </div>
