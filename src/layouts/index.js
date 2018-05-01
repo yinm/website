@@ -2,6 +2,7 @@ import React from "react"
 import Helmet from 'react-helmet'
 
 import Header from '../components/header'
+import Biography from "../components/biography"
 
 export default ({ children, data }) => (
   <div>
@@ -14,6 +15,7 @@ export default ({ children, data }) => (
     />
     <Header siteTitle={data.site.siteMetadata.title} />
     {children()}
+    <Biography/>
   </div>
 )
 
