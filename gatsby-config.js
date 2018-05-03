@@ -2,5 +2,15 @@ module.exports = {
   siteMetadata: {
     title: '楽しいだけで十分です',
   },
-  plugins: ['gatsby-plugin-react-helmet'],
+  plugins: [
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        path: `${__dirname}/src/pages`,
+        name: 'pages',
+      },
+    },
+    'gatsby-plugin-react-helmet',
+    'gatsby-transformer-remark',
+  ],
 }
