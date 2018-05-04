@@ -13,7 +13,7 @@ export default ({ data }) => {
         >
           <Link
             to={node.fields.slug}
-            css={{ textDecoration: 'none', color: 'inherit' }}
+            style={{ textDecoration: 'none', color: 'inherit' }}
           >
             <time>{node.frontmatter.date}</time>
             <h3
