@@ -4,6 +4,8 @@ import Helmet from 'react-helmet'
 import Header from '../components/header'
 import Biography from "../components/biography"
 
+import 'normalize.css';
+
 export default ({ children, data }) => (
   <div>
     <Helmet
