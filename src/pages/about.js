@@ -13,5 +13,12 @@ export default () =>
     >
       About
     </h1>
-    <p>I'm a software engineer.</p>
+    <p
+      style={{
+        lineHeight: 2,
+      }}
+    >
+      GMOペパボでWebエンジニアをしています。<br />
+      フロントエンドの技術に関心があります。
+    </p>
   </article>

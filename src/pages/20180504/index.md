@@ -3,7 +3,7 @@ title: Gatsby + Netlify でブログを作ってみました。
 date: "2018-05-04"
 ---
 
-前からやってみようと思ってた`Static Site Generator`を使ってブログを作成してみました。
+前からやってみようと思ってたStatic Site Generatorを使ってブログを作成してみました。
 タイトルの通り、Gatsbyを使って作成して、Netlifyにホストしています。
 Reactは全然わかってないのですが、[Gatsbyのtutorial](https://www.gatsbyjs.org/tutorial/)を読みながら作ってみました。
 

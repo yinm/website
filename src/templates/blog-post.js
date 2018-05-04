@@ -15,7 +15,12 @@ export default ({ data }) => {
       >
         {post.frontmatter.title}
         </h1>
-      <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div
+        dangerouslySetInnerHTML={{ __html: post.html }}
+        style={{
+          lineHeight: 2,
+        }}
+      />
     </article>
   )
 }
