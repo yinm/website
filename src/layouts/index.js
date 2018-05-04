@@ -1,75 +1,41 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from "react"
+import Helmet from 'react-helmet'
 
-import { rhythm, scale } from '../utils/typography'
+import Header from '../components/header'
+import Biography from "../components/biography"
 
-class Template extends React.Component {
-  render() {
-    const { location, children } = this.props
-    let header
+import '../css/normalize.css';
+import '../css/base.css'
 
-    let rootPath = `/`
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
+export default ({ children, data }) => (
+  <div>
+    <Helmet
+      title={data.site.siteMetadata.title}
+      meta={[
+        { name: 'description', content: 'programming blog' },
+        { name: 'keywords', content: 'blog' },
+      ]}
+    />
+    <Header siteTitle={data.site.siteMetadata.title} />
+    <div
+      style={{
+        margin: '0 auto',
+        maxWidth: 960,
+      }}
+    >
+      {children()}
+      <hr />
+      <Biography/>
+    </div>
+  </div>
+)
+
+export const query = graphql`
+  query SiteTitleQuery {
+    site {
+      siteMetadata {
+        title
+      }
     }
-
-    if (location.pathname === rootPath) {
-      header = (
-        <h1
-          style={{
-            ...scale(1.2),
-            marginBottom: rhythm(1.5),
-            marginTop: 0,
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            楽しいだけで十分です
-          </Link>
-        </h1>
-      )
-    } else {
-      header = (
-        <h3
-          style={{
-            fontFamily: 'Montserrat, sans-serif',
-            marginTop: 0,
-            marginBottom: rhythm(-1),
-          }}
-        >
-          <Link
-            style={{
-              boxShadow: 'none',
-              textDecoration: 'none',
-              color: 'inherit',
-            }}
-            to={'/'}
-          >
-            楽しいだけで十分です
-          </Link>
-        </h3>
-      )
-    }
-    return (
-      <div
-        style={{
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          maxWidth: rhythm(24),
-          padding: `${rhythm(1.5)} ${rhythm(3 / 4)}`,
-        }}
-      >
-        {header}
-        {children()}
-      </div>
-    )
   }
-}
-
-export default Template
+`
