@@ -25,7 +25,8 @@ const ListLink = props => (
 const Header = ({ siteTitle }) => (
   <div
     style={{
-      background: '#000',
+      background: '#333',
+      padding: '10px',
     }}
   >
     <div

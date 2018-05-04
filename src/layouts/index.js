@@ -5,6 +5,7 @@ import Header from '../components/header'
 import Biography from "../components/biography"
 
 import 'normalize.css';
+import '../css/base.css'
 
 export default ({ children, data }) => (
   <div>
@@ -16,8 +17,16 @@ export default ({ children, data }) => (
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
-    {children()}
-    <Biography/>
+    <div
+      style={{
+        margin: '0 auto',
+        maxWidth: 960,
+      }}
+    >
+      {children()}
+      <hr />
+      <Biography/>
+    </div>
   </div>
 )
 

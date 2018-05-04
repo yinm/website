@@ -5,14 +5,31 @@ export default ({ data }) => {
   return (
     <div>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div key={node.id}>
+        <div
+          key={node.id}
+          style={{
+            margin: '50px 0',
+          }}
+        >
           <Link
             to={node.fields.slug}
             css={{ textDecoration: 'none', color: 'inherit' }}
           >
-            <h3>{node.frontmatter.title}</h3>
             <time>{node.frontmatter.date}</time>
-            <p>{node.excerpt}</p>
+            <h3
+              style={{
+                fontSize: '1.5rem',
+                margin: '10px 0',
+              }}
+            >
+              {node.frontmatter.title}
+            </h3>
+            <p
+              style={{
+                margin: '10px 0',
+              }}
+            >
+            </p>
           </Link>
         </div>
       ))}
@@ -26,7 +43,6 @@ export const pageQuery = graphql`
       edges {
         node {
           id
-          excerpt
           frontmatter {
             title
             date(formatString: "YYYY-MM-DD")
