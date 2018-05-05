@@ -6,6 +6,7 @@ import Biography from "../components/biography"
 
 import '../css/normalize.css';
 import '../css/base.css'
+require("prismjs/themes/prism-solarizedlight.css");
 
 export default ({ children, data }) => (
   <div>
