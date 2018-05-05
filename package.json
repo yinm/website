@@ -17,6 +17,7 @@
     "gatsby-source-filesystem": "^1.5.35",
     "gatsby-transformer-remark": "^1.7.40",
     "normalize.css": "^8.0.0",
+    "prism-solarized-dark": "^1.0.1",
     "prismjs": "^1.14.0",
     "react-helmet": "^5.2.0"
   }
