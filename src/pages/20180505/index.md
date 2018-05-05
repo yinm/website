@@ -5,11 +5,11 @@ date: "2018-05-05"
 
 一応技術ブログのつもりなので、コードを書くときにSyntax Highlightingは効いてほしいのです。
 
-```js
+```javascript
 function logging() {
   const message = 'いい感じにシンタックスをハイライトしている！'
   console.log(`log: ${message}`)
 }
 
-logging()
+logging() // いい感じにシンタックスをハイライトしている！
 ```
