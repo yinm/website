@@ -1,2 +1,2 @@
 # yinm's blog (楽しいだけで十分です)
-* https://yinm.netlify.com/
+* https://yinm.info/
