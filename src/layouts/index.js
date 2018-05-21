@@ -2,7 +2,6 @@ import React from "react"
 import Helmet from 'react-helmet'
 
 import Header from '../components/header'
-import Biography from "../components/biography"
 
 import '../css/normalize.css';
 import '../css/base.css'
@@ -26,7 +25,6 @@ export default ({ children, data }) => (
     >
       {children()}
       <hr />
-      <Biography/>
     </div>
   </div>
 )
