@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-https://yinm.netlify.com/* https://yinm.info/:splat 301!
