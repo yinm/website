@@ -1,6 +1,6 @@
 {
-  "name": "yinm's website",
-  "description": "created with Gatsby",
+  "name": "yinm_website",
+  "description": "created_with_Gatsby",
   "license": "MIT",
   "scripts": {
     "develop": "gatsby develop",
