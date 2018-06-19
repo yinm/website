@@ -1,0 +1,22 @@
+@charset "UTF-8";
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.header__title {
+  padding: 20px 0;
+  letter-spacing: 1.2px;
+}
+
+.header__nav ul {
+  display: flex;
+  margin: 0;
+}
+
+.header__link {
+  font-size: 1.2rem;
+}

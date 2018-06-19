@@ -1,7 +1,7 @@
 import React from "react"
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
+import Header from '../components/header/index'
 import Biography from "../components/biography"
 
 import '../css/normalize.css';

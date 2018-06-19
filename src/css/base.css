@@ -21,6 +21,11 @@ a:visited {
   color: #333;
 }
 
+ul {
+  padding: 0;
+  list-style: none;
+}
+
 .container {
   max-width: var(--max-width);
   margin: 0 auto;
