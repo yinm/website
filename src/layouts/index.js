@@ -1,7 +1,7 @@
 import React from "react"
 import Helmet from 'react-helmet'
 
-import Header from '../components/header'
+import Header from '../components/header/index'
 import Biography from "../components/biography"
 
 import '../css/normalize.css';
@@ -9,7 +9,7 @@ import '../css/base.css'
 import '../css/prism-solarizeddark.css'
 
 export default ({ children, data }) => (
-  <div>
+  <div className="container">
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
@@ -18,14 +18,8 @@ export default ({ children, data }) => (
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
-    <div
-      style={{
-        margin: '0 auto',
-        maxWidth: 960,
-      }}
-    >
+    <div>
       {children()}
-      <hr />
       <Biography/>
     </div>
   </div>
