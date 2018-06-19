@@ -11,10 +11,6 @@ const ListLink = props => (
     <Link
       to={props.to}
       style={{
-        textShadow: 'none',
-        backgroundImage: 'none',
-        color: '#fff',
-        textDecoration: 'none',
       }}
     >
       {props.children}
@@ -23,45 +19,27 @@ const ListLink = props => (
 )
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: '#333',
-      padding: '10px',
-    }}
-  >
-    <div
+  <header>
+    <h1>
+      <Link
+        to="/"
+        style={{
+          textDecoration: 'none',
+        }}
+      >
+        {siteTitle}
+      </Link>
+    </h1>
+
+    <ul
       style={{
-        margin: '0 auto',
-        maxWidth: 960,
+        listStyle: 'none',
+        float: 'right',
       }}
     >
-      <h1
-        style={{
-          margin: 0,
-          display: 'inline',
-        }}
-      >
-        <Link
-          to="/"
-          style={{
-            color: '#fff',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
-
-      <ul
-        style={{
-          listStyle: 'none',
-          float: 'right',
-        }}
-      >
-        <ListLink to="/about/">About</ListLink>
-      </ul>
-    </div>
-  </div>
+      <ListLink to="/about/">About</ListLink>
+    </ul>
+  </header>
 )
 
 export default Header

@@ -1,11 +1,27 @@
+@charset "UTF-8";
+
+:root {
+  --max-width: 1000px;
+}
+
+html {
+  font-size: 62.5%;
+}
+
 body {
   color: #333;
 }
 
 a {
   color: #333;
+  text-decoration: none;
 }
 
 a:visited {
   color: #333;
+}
+
+.container {
+  max-width: var(--max-width);
+  margin: 0 auto;
 }

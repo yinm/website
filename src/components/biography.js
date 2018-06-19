@@ -7,6 +7,7 @@ class Biography extends React.Component {
     return (
       <div
         style={{
+          borderTop: '1px solid #ddd',
           padding: '30px 0'
         }}
       >
