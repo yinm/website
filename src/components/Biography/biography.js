@@ -16,6 +16,15 @@ class Biography extends React.Component {
         <div className="biography__text">
           <p>WRITTEN BY <strong>yinm</strong></p>
           <p>I'm a software engineer.</p>
+          {/* TODO: Use icon fonts */}
+          <ul className="biography__links">
+            <li>
+              <a href="https://github.com/yinm">GitHub</a>
+            </li>
+            <li>
+              <a href="https://twitter.com/">Twitter</a>
+            </li>
+          </ul>
         </div>
       </section>
     )

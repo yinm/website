@@ -19,3 +19,12 @@
   margin-top: 0;
   font-size: var(--font-size-l);
 }
+
+.biography__links {
+  padding-left: 15px;
+  list-style: square;
+}
+
+.biography__links li {
+  margin-bottom: 10px;
+}
