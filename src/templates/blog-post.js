@@ -1,25 +1,17 @@
 import React from 'react'
 
+import styles from './style.css'
+
 export default ({ data }) => {
   const post = data.markdownRemark
   return (
-    <article
-      style={{
-        marginBottom: '50px',
-      }}
-    >
-      <h1
-        style={{
-          marginBottom: '50px',
-        }}
-      >
+    <article className="article__section">
+      <h1 className="article__title">
         {post.frontmatter.title}
-        </h1>
+      </h1>
       <div
         dangerouslySetInnerHTML={{ __html: post.html }}
-        style={{
-          lineHeight: 2,
-        }}
+        className="article__content"
       />
     </article>
   )
