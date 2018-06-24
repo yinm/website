@@ -7,6 +7,7 @@
 .article__title {
   padding-left: 10px;
   border-left: 3px solid var(--color-blue);
+  margin-bottom: 30px;
   font-size: var(--font-size-xxxl);
 }
 

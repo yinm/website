@@ -1,24 +1,14 @@
 import React from "react"
 
+import styles from '../templates/style.css'
+
 export default () =>
-  <article
-    style={{
-      marginBottom: '50px',
-    }}
-  >
-    <h1
-      style={{
-        marginBottom: '50px'
-      }}
-    >
+  <article className="article__section">
+    <h1 className="article__title">
       About
     </h1>
-    <p
-      style={{
-        lineHeight: 2,
-      }}
-    >
+    <p className="article__content">
       GMOペパボでWebエンジニアをしています。<br />
-      フロントエンドの技術に関心があります。
+      UIを作る技術に関心があります。
     </p>
   </article>
