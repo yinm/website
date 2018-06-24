@@ -1,39 +1,25 @@
 import React from "react"
 import Link from 'gatsby-link'
 
+import styles from './style.css'
+
 export default ({ data }) => {
   return (
-    <div>
+    <main>
       {data.allMarkdownRemark.edges.map(({ node }) => (
-        <div
+        <section
           key={node.id}
-          style={{
-            margin: '50px 0',
-          }}
+          className="articles__container"
         >
-          <Link
-            to={node.fields.slug}
-            style={{ textDecoration: 'none', color: 'inherit' }}
-          >
-            <time>{node.frontmatter.date}</time>
-            <h3
-              style={{
-                fontSize: '1.5rem',
-                margin: '10px 0',
-              }}
-            >
+          <Link to={node.fields.slug}>
+            <time className="articles__time">{node.frontmatter.date}</time>
+            <h3 className="articles__title">
               {node.frontmatter.title}
             </h3>
-            <p
-              style={{
-                margin: '10px 0',
-              }}
-            >
-            </p>
           </Link>
-        </div>
+        </section>
       ))}
-    </div>
+    </main>
   );
 };
 

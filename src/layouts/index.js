@@ -18,10 +18,8 @@ export default ({ children, data }) => (
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
-    <div>
-      {children()}
-      <Biography/>
-    </div>
+    {children()}
+    <Biography/>
   </div>
 )
 
