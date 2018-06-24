@@ -1,0 +1,50 @@
+:root {
+  /* ***** value layer ***** */
+
+  /* colors */
+  --color-white: #fff;
+  --color-black: #1a1a1a;
+  --color-gray: #8c8c8c;
+  --color-gray-dark: #333;
+  --color-gray-light: #ddd;
+  --color-gray-pale: #f6f6f6;
+  --color-blue: #0093cb;
+
+  /* ***** branding layer ***** */
+
+  /* colors */
+  --color-base: var(--color-white);
+  --color-link: var(--color-gray-dark);
+  --color-accent: var(--color-blue);
+
+  /* ***** media layer ***** */
+
+  /* colors */
+  --color-text: var(--color-black);
+  --color-line: var(--color-gray-light);
+
+  /* font-size */
+  --font-size-xs: .6rem;
+  --font-size-s: .8rem;
+  --font-size-m: 1rem;
+  --font-size-l: 1.2rem;
+  --font-size-xl: 1.4rem;
+  --font-size-xxl: 1.6rem;
+  --font-size-xxxl: 1.8rem;
+  --font-size-xxxxl: 2.0rem;
+
+  /* font-weight */
+  --font-weight-default: 400;
+  --font-weight-bold: 700;
+
+  /* border */
+  --line-width: 1px;
+  --line-style: solid;
+  --border: var(--line-width) var(--line-style) var(--color-line);
+
+  /* custom media */
+  @custom-media --breakpoint-s (min-width: 768px);
+
+  /* display size */
+  --max-width: 1000px;
+}
