@@ -1,0 +1,13 @@
+@import '../css/properties.css';
+
+.articles__container {
+  margin: 50px 0;
+}
+
+.articles__title {
+  font-size: var(--font-size-xxl);
+}
+
+.articles__time {
+  font-size: var(--font-size-m);
+}

@@ -1,24 +1,26 @@
 @charset "UTF-8";
 
-:root {
-  --max-width: 1000px;
-}
+@import "./properties.css";
 
-html {
+:root {
   font-size: 62.5%;
 }
 
 body {
-  color: #333;
+  color: var(--color-text);
 }
 
 a {
-  color: #333;
+  color: var(--color-link);
   text-decoration: none;
 }
 
 a:visited {
-  color: #333;
+  color: var(--color-link);
+}
+
+a:hover {
+  color: var(--color-accent);
 }
 
 ul {

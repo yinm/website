@@ -2,7 +2,7 @@ import React from "react"
 import Helmet from 'react-helmet'
 
 import Header from '../components/header/index'
-import Biography from "../components/biography"
+import Biography from "../components/Biography/biography"
 
 import '../css/normalize.css';
 import '../css/base.css'
@@ -18,10 +18,8 @@ export default ({ children, data }) => (
       ]}
     />
     <Header siteTitle={data.site.siteMetadata.title} />
-    <div>
-      {children()}
-      <Biography/>
-    </div>
+    {children()}
+    <Biography/>
   </div>
 )
 
