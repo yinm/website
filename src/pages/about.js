@@ -9,6 +9,6 @@ export default () =>
     </h1>
     <p className="article__content">
       GMOペパボでWebエンジニアをしています。<br />
-      UIを作る技術に関心があります。
+      UIを作ることに関心があります。
     </p>
   </article>
