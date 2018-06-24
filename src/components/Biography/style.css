@@ -1,0 +1,21 @@
+@import '../../css/properties.css';
+
+.biography__container {
+  border-top: var(--border);
+  padding: 30px 0;
+  display: flex;
+}
+
+.biography__image {
+  width: 100px;
+  height: 100px;
+}
+
+.biography__text {
+  margin-left: 20px;
+}
+
+.biography__text p {
+  margin-top: 0;
+  font-size: var(--font-size-l);
+}
