@@ -19,3 +19,8 @@
   font-size: var(--font-size-xl);
   line-height: 2;
 }
+
+.article__content :not(pre) > code[class*="language-"] {
+  background: #eee;
+  color: var(--color-black);
+}
