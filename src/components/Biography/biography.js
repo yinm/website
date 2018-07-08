@@ -1,4 +1,5 @@
 import React from 'react'
+import Txt from '../atoms/Txt/index'
 
 import styles from './style.css'
 
@@ -14,8 +15,8 @@ class Biography extends React.Component {
           className="biography__image"
         />
         <div className="biography__text">
-          <p>WRITTEN BY <strong>yinm</strong></p>
-          <p>I'm a software engineer.</p>
+          <Txt>WRITTEN BY <strong>yinm</strong></Txt>
+          <Txt>I'm a software engineer.</Txt>
           {/* TODO: Use icon fonts */}
           <ul className="biography__links">
             <li>
