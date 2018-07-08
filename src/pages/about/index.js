@@ -1,20 +1,21 @@
 import React from "react"
 import Helmet from 'react-helmet'
+import Txt from '../../components/atoms/Txt/index'
 
-import styles from '../templates/style.css'
+import styles from './styles.module.css'
 
 export default ({ data }) =>
-  <article className="article__section">
+  <article className={ styles.about__section }>
     <Helmet
       title={`About | ${data.site.siteMetadata.title}`}
     />
-    <h1 className="article__title">
+    <h1 className={ styles.about__title }>
       About
     </h1>
-    <p className="article__content">
+    <Txt size="l" className={ styles.about__content }>
       GMOペパボでWebエンジニアをしています。<br />
       UIを作ることに関心があります。
-    </p>
+    </Txt>
   </article>
 
 export const query = graphql`
