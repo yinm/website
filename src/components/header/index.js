@@ -30,6 +30,7 @@ const Header = ({ siteTitle }) => (
     <nav className="header__nav">
       <ul>
         <ListLink to="/about/">About</ListLink>
+        <ListLink to="/rss.xml">RSS</ListLink>
       </ul>
     </nav>
   </header>

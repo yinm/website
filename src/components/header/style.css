@@ -21,4 +21,6 @@ header {
 
 .header__link {
   font-size: var(--font-size-xl);
+  display: block;
+  padding: 15px;
 }
