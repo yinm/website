@@ -1,0 +1,25 @@
+@import '../../css/properties.css';
+
+.article__section {
+  margin: 40px 0;
+}
+
+.article__section a {
+  color: var(--color-accent);
+}
+
+.article__title {
+  padding: 10px 0 10px 10px;
+  border-left: 3px solid var(--color-blue);
+  margin-bottom: 30px;
+  font-size: var(--font-size-xxxl);
+}
+
+.article__content {
+  line-height: 2;
+}
+
+.article__content :not(pre) > code[class*="language-"] {
+  background: #eee;
+  color: var(--color-black);
+}

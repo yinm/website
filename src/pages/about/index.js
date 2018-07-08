@@ -1,8 +1,8 @@
 import React from "react"
 import Helmet from 'react-helmet'
-import Txt from '../components/atoms/Txt/index'
+import Txt from '../../components/atoms/Txt/index'
 
-import styles from '../templates/style.css'
+import styles from './styles.module.css'
 
 export default ({ data }) =>
   <article className="article__section">
