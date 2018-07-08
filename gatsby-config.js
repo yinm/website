@@ -1,6 +1,8 @@
 module.exports = {
   siteMetadata: {
     title: '楽しいだけで十分です',
+    description: 'Webエンジニアのyinmのブログです',
+    siteUrl: 'https://yinm.info/',
   },
   plugins: [
     {
@@ -30,6 +32,9 @@ module.exports = {
           },
         ],
       },
+    },
+    {
+      resolve: `gatsby-plugin-feed`
     },
     'gatsby-plugin-react-helmet',
     `gatsby-plugin-netlify`, // make sure to put last in the array
