@@ -1,5 +1,6 @@
 import React from "react"
 import Helmet from 'react-helmet'
+import Txt from '../components/atoms/Txt/index'
 
 import styles from '../templates/style.css'
 
@@ -11,10 +12,10 @@ export default ({ data }) =>
     <h1 className="article__title">
       About
     </h1>
-    <p className="article__content">
+    <Txt size="l" className="article__content">
       GMOペパボでWebエンジニアをしています。<br />
       UIを作ることに関心があります。
-    </p>
+    </Txt>
   </article>
 
 export const query = graphql`
