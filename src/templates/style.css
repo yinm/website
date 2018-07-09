@@ -24,3 +24,8 @@
   background: #eee;
   color: var(--color-black);
 }
+
+.article__content blockquote {
+  border-left: 3px solid var(--color-gray-light);
+  padding-left: 10px;
+}

@@ -13,7 +13,7 @@ export default ({ children, data }) => (
     <Helmet
       title={data.site.siteMetadata.title}
       meta={[
-        { name: 'description', content: 'programming blog' },
+        { name: 'description', content: 'Webエンジニアのyinmのブログです' },
         { name: 'keywords', content: 'blog' },
       ]}
     />
