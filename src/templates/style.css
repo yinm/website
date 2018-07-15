@@ -20,6 +20,11 @@
   line-height: 2;
 }
 
+.article__content ul {
+  margin-left: 30px;
+  list-style: square;
+}
+
 .article__content :not(pre) > code[class*="language-"] {
   background: #eee;
   color: var(--color-black);
