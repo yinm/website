@@ -25,6 +25,24 @@
   list-style: square;
 }
 
+.article__content table {
+  border-collapse: collapse;
+}
+
+.article__content table tr:nth-child(2n) {
+  background-color: var(--color-gray-pale);
+}
+
+.article__content table th,
+.article__content table td {
+  border: 1px solid var(--color-gray-light);
+  padding: 6px 13px;
+}
+
+.article__content table th {
+  font-weight: var(--font-weight-bold);
+}
+
 .article__content :not(pre) > code[class*="language-"] {
   background: #eee;
   color: var(--color-black);
