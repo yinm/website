@@ -23,7 +23,7 @@ class Biography extends React.Component {
               <a href="https://github.com/yinm">GitHub</a>
             </li>
             <li>
-              <a href="https://twitter.com/">Twitter</a>
+              <a href="https://twitter.com/_yinm_">Twitter</a>
             </li>
           </ul>
         </div>
