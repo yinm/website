@@ -1,6 +1,6 @@
 ---
 title: CSS Tips
-date: "2018-08-14"
+date: "2018-08-16"
 ---
 
 [HTML&CSS入門：イチからWebデザインを習得する講座](https://saruwakakun.com/html-css/basic)をひと通り読んだので、読書メモです。
