@@ -1,6 +1,6 @@
 ---
 title: position, floatプロパティの整理
-date: "28-08-31"
+date: "2018-08-31"
 ---
 
 [CODEPREP | CSS基礎 position編](https://codeprep.jp/books/64)を勉強したのでメモです。
