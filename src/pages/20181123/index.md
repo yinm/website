@@ -107,6 +107,124 @@ date: "2018-11-23"
 - `never`型とは
   - 到達不可能なコードに使う (e.g. Errorをthrowするため、関数のreturnにたどり着けない場合)
 
+## [アドバンスド型戦略 | Revised Revised TypeScript in Definitelyland](http://typescript.ninja/typescript-in-definitelyland/types-advanced.html)
+- この章で解説するのは、型のうち難しいけど便利な話や、標準の型定義を読むために必要な知識や、あまり関わりたくないけど実用上たまにお世話になる内容
+- 本章で書かれた内容を活かさないと上手く扱えないJavaScriptコードは、元々の品質が微妙なコードだと考えてよい
+
+### 4.1　直和型（Union Types）
+- 直和型（Union Types）とは
+  - `string | null | undefined`という型注釈がある場合、この変数の値はstringか、nullか、undefinedのいずれかを表す
+  - 既存のJavaScriptライブラリには返り値の型が複数ある困った関数がかなりある。これらに対して適切なコードを書くことを誘導したい時、anyを指定するよりunion typesを使ったほうがよりよい型定義になる
+  - TypeScriptのコード書くときに積極的に使うものではない (--strictNullChecksオプションを使う場合に避けて通れない記法だから覚えるだけ)
+- 意図せずunion typesを目にしてしまう機会
+  - e.g. || 演算子を使ったとき、条件（三項）演算子を使ったとき、配列リテラルを使ったとき
+  - TypeScriptのベストプラクティスとして1つの配列で複数の型の値を扱わないほうが堅牢なコードになるため、きれいなコードを書いている限りはあまり見ないかも
+- 型注釈として関数型を与える
+  - 型名をカッコでくくる必要がある
+  - e.g. `let func: (() => string) | (() => boolean);`
+
+### 4.2　型の番人（Type Guards）
+- type guardsとは
+  - union typesが導入されたことで変数の型が一意ではなくなってしまったため、それを自然に解決するために導入された仕組み
+  - type guardsは"変数Aが○○という条件を満たすとき、変数Aの型は××である"というルールを用いて、ガード（番人となる条件式など）の後の文脈で変数の型を××に狭めることができる
+- 処理フローに基づく型の解析（Control Flow Based Type Analysis）
+  - JavaScriptとして素直にコードを書き、変数の型が確定するような分岐などがあると書いたとおりに変数の型が絞り込まれるというもの
+  - 関数はいつ実行されるかわからないため、変数の再代入が可能な場合、関数の内側で別途絞込みを行う必要がある (関数の内側と外側では、処理フローは別世界のため)。一方、constを使うと変数の値を変えることができないため、この問題を回避できる場合がある
+- JavaScriptのtypeofは指定した値がどういう性質のオブジェクトかを調べ、文字列で返す演算子
+  - string のときは"string"を返す
+  - boolean のときは"boolean"を返す
+  - number のときは"number"を返す
+  - undefined のときは"undefined"を返す
+  - 関数として呼び出し可能な場合は"function"を返す
+  - それ以外の場合（nullを含む！）は"object"を返す
+- typeofによるType Guards
+  - typeofの返り値次第で変数の型を絞り込む
+- instanceofによるType Guards
+  - typeofでしかtype guardsが使えないと辛いので、instanceofを使ったtype guardsもある
+- ユーザ定義のType Guards（User-defined Type Guards）
+  - ユーザが定義した関数を使って、値の型をTypeScriptコンパイラに指示する方法
+  - 型判別用の関数を作成し、そこで返り値に`仮引数名 is 型名`という形式で判別結果を指定。この書き方をした場合、返り値はbooleanでなければない
+- Type Guardsと論理演算子
+  - type guardsは&&とか||とか?とか!とかの論理演算子にも対応
+- Type Guardsの弱点
+  - type guardsは型システム上の仕組みであり、JavaScriptの実行環境とはまったく関係がない
+  - e.g. 構造的部分型の仕組みにより、クラスが要求されている箇所に互換性のある別の値(オブジェクトリテラルなど)を代入できる。しかし、JSになった時、そのコードは動かない
+  - 回避するには、ユーザ定義のtype guardsを使う。または、privateな要素をクラスに突っ込んでしまう
+  - そもそもunion typesをなるべく使わないのが一番いい方法
+
+### 4.3　交差型（Intersection Types）
+- 交差型 (intersection types)とは
+  - 2つの型を合成し、1つの型にする
+  - union typesと違って利用頻度は低く、TypeScript的に使いたくなるシチュエーションもほとんどない (ユースケースは、型定義ファイルが書きやすくなる場合がある)
+
+### 4.4　型の別名（Type Alias）
+- 型の別名 (type alias)とは
+  - union typesの扱いを便利にするために導入された機能で、型をひとまとまりにして、それに名前が付けられるだけの機能 (よく使うunion typeesに名前をつけて使い回しやすくする)
+  - type aliasは型に別名をつけるだけで、コンパイルすると消えてしまう
+- type alias と interface
+  - type aliasは仕様上、interfaceと同じように利用できる場面もあるが、基本的にはinterfaceを使うべき
+  - interfaceは定義の統合ができるので後から自由に拡張することができる
+
+### 4.5　プリミティブ値のリテラル型（String, Number, Boolean and Enum Literal Types）
+- プリミティブ値のリテラル型とは
+  - 文字列リテラル、数値リテラル、真偽値のリテラルを型として使える機能
+  - この機能はTypeScriptがJavaScriptの現実と折り合いをつける上で重要な役割がある (e.g. DOMのaddEventListenerは、指定するイベントによってイベントリスナーの型が変わる)
+
+### 4.6　多態性のあるthis型（Polymorphic 'this' Type）
+- 多態性のあるthis型とは
+  - thisを型として用いることができる
+
+### 4.7　関数のthisの型の指定（Specifying This Types For Functions）
+- 関数のthisの型の指定
+  - JavaScriptではFunction.prototype.bindやFunction.prototype.call、Function.prototype.applyなどの関数により、関数呼び出し時のthisの値の型を変更できる。TypeScriptでもこの仕様に対して自然なサポートを与えようというのが、関数のthisの型の指定
+  - 記法は、関数の1つ目の仮引数の名前をthisにするだけ
+
+### 4.8　ThisTypeでthisの型を制御する
+- ThisTypeとは
+  - --noImplicitThisオプションを利用した場合、オブジェクトリテラル中のthisがオブジェクトリテラル自体を指すよう正しく認識される
+  - さらにオブジェクトリテラル中でのthisの型を強力にコントロールしたい場合、`ThisType<T>`を利用できる
+
+### 4.9　ローカル型（Local Types）
+- ローカル型
+  - 通常より小さい範囲で、クラスやインタフェースやenumやtype aliasを定義できる
+  - 記法は、ブロックスコープ`{}`の中で定義するだけ
+
+### 4.10　型クエリ（Type Queries）
+- 型クエリ (Type Queries)とは
+  - 指定したクラスや変数などの型をコピーする
+  - 記法は、`変数名: typeof コピーしたい型`
+
+### 4.11　タプル型（Tuple Types）
+- タプル (tuple)とは
+  - 任意の数の要素の組
+  - JavaScriptではタプルはサポートされていないため、TypeScriptでのタプルはただのArrayで表現される
+  - 既存のJavaScript資産を使おうとしたときに、配列の形で多値を返してくるライブラリがある。タプル型はそういったときに使うためのもので、TypeScriptでコードを書く際に多用するものではない
+
+### 4.12　非null指定演算子（Non-null Assertion Operator）
+- 非null指定演算子（!）とは
+  - 値がnullやundefinedではないことを人力でコンパイラに教えてやるための方法
+  - 記法は、変数やプロパティの末尾に`!`を指定
+  - 非null指定演算子をなるべく使わない手段として使う前に初期値を代入する、undefinedやnullを含まない型の値に詰め直すなど
+
+### 4.13　クラスのMixin
+- クラスのMixinとは
+  - クラスに要素や機能を追加できる
+  - 拡張用の関数に対してコンストラクタを渡すと機能拡張する形で継承したものを返す、というだけの関数
+
+### 4.14　keyofと型の写像（keyof and Mapped Types）
+- 型のルックアップ（Lookup Types）
+  - 任意のプロパティの型を参照できる機能
+  - 型の写像処理やジェネリクスと組み合わせると力を発揮
+- keyof演算子
+  - 全プロパティのキー名を列挙する
+  - 型の写像処理やジェネリクスと組み合わせると力を発揮
+- 型の写像処理 (Mapped Types)
+  - 書き方の基本が4パターン (Kに含まれるPという値の型にあたるTと読めばいい)
+  - `{ [ P in K ] : T }`
+  - `{ [ P in K ] ? : T }`
+  - `{ readonly [ P in K ] : T }`
+  - `{ readonly [ P in K ] ? : T }`
+
 ## [オプションを知り己のコードを知れば百戦危うからず | Revised Revised TypeScript in Definitelyland](http://typescript.ninja/typescript-in-definitelyland/tsc-options.html)
 
 ### 5.1　--init
