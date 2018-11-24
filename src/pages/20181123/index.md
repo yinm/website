@@ -143,7 +143,7 @@ date: "2018-11-23"
   - typeofでしかtype guardsが使えないと辛いので、instanceofを使ったtype guardsもある
 - ユーザ定義のType Guards（User-defined Type Guards）
   - ユーザが定義した関数を使って、値の型をTypeScriptコンパイラに指示する方法
-  - 型判別用の関数を作成し、そこで返り値に`仮引数名 is 型名`という形式で判別結果を指定。この書き方をした場合、返り値はbooleanでなければない
+  - 型判別用の関数を作成し、そこで返り値に`仮引数名 is 型名`という形式で判別結果を指定。この書き方をした場合、返り値はbooleanでなければならない
 - Type Guardsと論理演算子
   - type guardsは&&とか||とか?とか!とかの論理演算子にも対応
 - Type Guardsの弱点
@@ -159,7 +159,7 @@ date: "2018-11-23"
 
 ### 4.4　型の別名（Type Alias）
 - 型の別名 (type alias)とは
-  - union typesの扱いを便利にするために導入された機能で、型をひとまとまりにして、それに名前が付けられるだけの機能 (よく使うunion typeesに名前をつけて使い回しやすくする)
+  - union typesの扱いを便利にするために導入された機能で、型をひとまとまりにして、それに名前が付けられるだけの機能 (よく使うunion typesに名前をつけて使い回しやすくする)
   - type aliasは型に別名をつけるだけで、コンパイルすると消えてしまう
 - type alias と interface
   - type aliasは仕様上、interfaceと同じように利用できる場面もあるが、基本的にはinterfaceを使うべき
@@ -407,7 +407,7 @@ date: "2018-11-23"
 - 型定義ファイル参照のデバッグ方法
   - コンパイルに利用したファイルをリスト表示する--listFilesオプション
   - 型定義ファイル探索の様子を表示する--traceResolutionオプション
-- DefinitelyTypednのバージョン規約
+- DefinitelyTypedのバージョン規約
   - 実装本体のパッケージと型定義ファイルのバージョンのmajorとminorが一致する
   - ただし、ずれているものもある (e.g. mochaの実装と型定義)
 
