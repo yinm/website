@@ -262,4 +262,37 @@ date: "2018-11-23"
 - 効果を及ぼすことができる対象はエディタやIDE上のみ。コンパイル時の動作には影響を及ぼすことができない
 - エディタでTypeScriptの入力補完やコンパイルエラーの表示動作を拡張できる
 
+## [JavaScriptの資産と@types | Revised Revised TypeScript in Definitelyland](http://typescript.ninja/typescript-in-definitelyland/at-types.html)
+- 型定義ファイルは、既存のJavaScript用資産を活用するための仕組み
+- 型定義ファイルは拡張子を`.d.ts` にする
+  - 拡張子を.d.tsとしたファイルに実装を含むコードを書くとtscがエラーにするので、ケアレスミス予防になる
+- 型定義ファイルはすでに実装があるJavaScriptに後付かつ手書きで型をつけていくため、ズレる（バグる）可能性が大いにある
+  - 既存の型定義ファイルを使う場合も、この可能性を頭の片隅においておき、信じすぎないようにする
+
+### 6.1　@typesを使う
+- 既存の型定義ファイルを使う
+  - [DefinitelyTyped](https://github.com/DefinitelyTyped/DefinitelyTyped)というコミュニティベースの型定義ファイル集積リポジトリを（間接的に）利用することになる
+  - TypeScript 2.0.0からは@typesというnpmのscoped packageを使って型定義ファイルを利用できる
+  - パッケージの検索は、[TypeScript Types Search](https://microsoft.github.io/TypeSearch/)
+  - @typesで導入した型定義ファイルの検索は、モジュールの解決方法（--moduleResolution）がnodeのときのみ行われる
+  - npmのscopedパッケージを扱う場合、vvakame/foobarに対する型定義ファイルがほしいケースでは@types/vvakame__foobarパッケージを参照するネーミングルールになっている
+
+- npmのscoped package
+  - @xxx/ から始まる名前空間が区切られたnpm packageのこと
+  - https://docs.npmjs.com/misc/scope
+  - [npmで名前空間を持ったモジュールを公開する方法(scoped modules) | Web Scratch](https://efcl.info/2015/04/30/npm-namespace/)
+
+### 6.2　型定義ファイルを参照してみよう
+- 型定義ファイルを参照する
+  - 基本的に、tscコマンドでコンパイル対象に含める必要がある
+  - node_modules/@typesにある型定義ファイルは特別扱いされ、モジュールをimportした時や、tsconfig.jsonのtypesに記述したモジュールの解決時に自動的に走査される
+- 型定義ファイル参照のデバッグ方法
+  - コンパイルに利用したファイルをリスト表示する--listFilesオプション
+  - 型定義ファイル探索の様子を表示する--traceResolutionオプション
+- DefinitelyTypednのバージョン規約
+  - 実装本体のパッケージと型定義ファイルのバージョンのmajorとminorが一致する
+  - ただし、ずれているものもある (e.g. mochaの実装と型定義)
+
+
+
 
