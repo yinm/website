@@ -21,7 +21,7 @@ date: "2018-11-27"
 
 ### Open-ended
 - open-ended とは同じ装飾名の宣言があった時、自動的にマージされる性質のこと
-  - open-ended な宣言がマージされる条件に root container が共通である必要がある
+  - open-ended な宣言がマージされる条件に root container が共通であることが必要である
 
 #### TSのmoduleとは
 - TS では Top-Level に import や export があるファイルがのこと
@@ -71,7 +71,7 @@ date: "2018-11-27"
   - importを相対パスで指定する場合。自前の module はこちらになるはず
   - e.g. `import Entry from "./components/Entry"`
   - 既存の（自前の） JS を .d.ts ファイルとともに使用する場合は .js ファイルと .d.ts ファイルは同じディレクトリに入れておく
--  non-relative module importとは
+- non-relative module importとは
   - `require(xxx)` や `from xxx` の `xxx` をmodule名で指定する場合。npmのmoduleを利用する場合はこちらになるはず
   - e.g. `import $ = require('jquery')` or `import * as $ from 'jquery'`
 
