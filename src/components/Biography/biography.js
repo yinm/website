@@ -16,7 +16,7 @@ class Biography extends React.Component {
         />
         <div className="biography__text">
           <Txt>WRITTEN BY <strong>yinm</strong></Txt>
-          <Txt>I'm a software engineer.</Txt>
+          <Txt>I'm a Frontend Engineer.</Txt>
           {/* TODO: Use icon fonts */}
           <ul className="biography__links">
             <li>

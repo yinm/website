@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: '楽しいだけで十分です',
-    description: 'Webエンジニアのyinmのブログです',
+    description: 'Frontend Engineerのyinmのブログです',
     siteUrl: 'https://yinm.info',
   },
   plugins: [
