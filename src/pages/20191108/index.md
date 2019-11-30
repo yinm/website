@@ -25,7 +25,8 @@ Pepabo Tech Fridayについては、[Pepabo Tech Friday 始まってます! - �
 - 社内イベントなので、ないです。
 
 スライド
-- 発表に使った資料は公開できないのですが、一般公開用のスライドを作ろうと思ってるのでしばしお待ちを...(完成したら、URLを追記します)
+- ~~発表に使った資料は公開できないのですが、一般公開用のスライドを作ろうと思ってるのでしばしお待ちを...(完成したら、URLを追記します)~~
+- スライドを公開しました！ [漸進的Stylelint導入のすすめ](https://yinm.github.io/slides/20191108-gradual-installation-of-stylelint/#slide=1)
 
 Twitterのハッシュタグ
 - 社内イベントなので、ないです。
