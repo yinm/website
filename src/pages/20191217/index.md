@@ -1,5 +1,5 @@
 ---
-title: 【増枠】Vuetify Meetup #2で発表してきた
+title: "【増枠】Vuetify Meetup #2で発表してきた"
 date: "2019-12-17"
 ---
 
