@@ -13,7 +13,7 @@ export default ({ data }) =>
       About
     </h1>
     <Txt size="l" className={ styles.about__content }>
-      GMOペパボでFrontend Engineerをしています。<br />
+      Frontend Engineerをしています。<br />
       UIを作ることに関心があります。
     </Txt>
   </article>
