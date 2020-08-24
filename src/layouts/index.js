@@ -20,8 +20,20 @@ export default ({ children, data }) => (
     <Header siteTitle={data.site.siteMetadata.title} />
     {children()}
     <Biography/>
+    <p>
+      このサイトではGoogle Analyticsを利用しています。詳細は、
+      <a
+        href="https://policies.google.com/technologies/partner-sites?hl=ja"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        Google のサービスを使用するサイトやアプリから収集した情報の Google
+        による使用 – ポリシーと規約 – Google
+      </a>
+      をご覧ください。
+    </p>
   </div>
-)
+);
 
 export const query = graphql`
   query SiteTitleQuery {
