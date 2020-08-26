@@ -1,18 +1,15 @@
-import React from 'react'
-import Link from 'gatsby-link'
+import React from "react";
+import Link from "gatsby-link";
 
-import './style.css';
+import "./style.css";
 
-const ListLink = props => (
+const ListLink = (props) => (
   <li>
-    <Link
-      to={props.to}
-      className="header__link"
-    >
+    <Link to={props.to} className="header__link">
       {props.children}
     </Link>
   </li>
-)
+);
 
 const Header = ({ siteTitle }) => (
   <header>
@@ -20,7 +17,7 @@ const Header = ({ siteTitle }) => (
       <Link
         to="/"
         style={{
-          textDecoration: 'none',
+          textDecoration: "none",
         }}
       >
         {siteTitle}
@@ -30,10 +27,11 @@ const Header = ({ siteTitle }) => (
     <nav className="header__nav">
       <ul>
         <ListLink to="/about/">About</ListLink>
+        <ListLink to="/privacy-policy/">Privacy Policy</ListLink>
         <ListLink to="/rss.xml">RSS</ListLink>
       </ul>
     </nav>
   </header>
-)
+);
 
-export default Header
+export default Header;
