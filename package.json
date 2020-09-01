@@ -15,6 +15,7 @@
     "gatsby-plugin-google-analytics": "^1.0.31",
     "gatsby-plugin-netlify": "^1.0.21",
     "gatsby-plugin-react-helmet": "^2.0.11",
+    "gatsby-remark-embed-video": "^3.0.10",
     "gatsby-remark-prismjs": "^2.0.4",
     "gatsby-source-filesystem": "^1.5.39",
     "gatsby-transformer-remark": "^1.7.44",
