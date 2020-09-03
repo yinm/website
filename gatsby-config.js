@@ -23,24 +23,6 @@ module.exports = {
       options: {
         plugins: [
           {
-            resolve: `gatsby-remark-prismjs`,
-            options: {
-              classPrefix: "language-",
-              inlineCodeMarker: null,
-              aliases: {},
-            },
-          },
-        ],
-      },
-    },
-    {
-      resolve: `gatsby-plugin-feed`,
-    },
-    {
-      resolve: "gatsby-transformer-remark",
-      options: {
-        plugins: [
-          {
             resolve: "gatsby-remark-embed-video",
             options: {
               width: 800,
@@ -58,8 +40,19 @@ module.exports = {
               containerClass: "embedVideo-container", //Optional: Custom CSS class for iframe container, for multiple classes separate them by space
             },
           },
+          {
+            resolve: `gatsby-remark-prismjs`,
+            options: {
+              classPrefix: "language-",
+              inlineCodeMarker: null,
+              aliases: {},
+            },
+          },
         ],
       },
+    },
+    {
+      resolve: `gatsby-plugin-feed`,
     },
     "gatsby-plugin-react-helmet",
     `gatsby-plugin-netlify`, // make sure to put last in the array
