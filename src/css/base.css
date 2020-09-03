@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 @import "./properties.css";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap");
 
 :root {
   font-size: 62.5%;
@@ -8,6 +9,7 @@
 
 body {
   color: var(--color-text);
+  font-family: "Noto Sans JP", sans-serif;
 }
 
 a {
