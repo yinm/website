@@ -30,5 +30,5 @@ const myURL = new URL('https://example.com/')
 これで、冒頭に載せたコードと同じになりました。
 
 ### 参考
-- [URL | Node.js v15.1.0 Documentation](https://nodejs.org/api/url.html#url_the_whatwg_url_api)
+- [URL | Node.js v14.15.0 Documentation](https://nodejs.org/docs/latest-v14.x/api/url.html)
 - [Node v7 で入った WHATWG URL 実装について | blog.jxck.io](https://blog.jxck.io/entries/2016-10-27/whatwg-url.html)
