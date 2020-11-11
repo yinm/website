@@ -1,6 +1,7 @@
 ---
 title: Node.jsのpath指定の方法を整理する
 date: "2020-11-04"
+tags: ['JavaScript']
 ---
 
 Node.jsでpath指定する方法をよく忘れるので、path指定する時に使う知識を整理します。
