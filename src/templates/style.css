@@ -1,4 +1,8 @@
-@import '../css/properties.css';
+@import "../css/properties.css";
+
+img {
+  max-width: 100%;
+}
 
 .article__section {
   margin: 40px 0;
