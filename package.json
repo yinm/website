@@ -21,7 +21,7 @@
     "gatsby-transformer-remark": "^1.7.44",
     "normalize.css": "^8.0.0",
     "prism-solarized-dark": "^1.0.1",
-    "prismjs": "^1.21.0",
+    "prismjs": "^1.23.0",
     "react-helmet": "^5.2.0"
   }
 }
